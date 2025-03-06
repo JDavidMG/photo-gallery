@@ -1,8 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-avatar *ngIf="image">
+        <img [src]="image" class="perfil-img">
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>{{ name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +16,6 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Contenido existente -->
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

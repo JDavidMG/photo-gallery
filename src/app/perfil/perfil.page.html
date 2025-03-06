@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-avatar *ngIf="image">
+        <img [src]="image" class="perfil-img">
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>{{ name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="profile-container">
+    <img [src]="image" class="profile-image" />
+    <input type="file" (change)="selectImage($event)" />
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="saveProfile()">Guardar</ion-button>
+  </div>
+</ion-content>
