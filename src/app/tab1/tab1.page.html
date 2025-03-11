@@ -16,6 +16,22 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Input para subir imágenes -->
+  <ion-item>
+    <ion-label>Subir imagen de un gato</ion-label>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*">
+  </ion-item>
+
+  <!-- Mostrar la predicción -->
+  <ion-card *ngIf="prediction">
+    <ion-card-header>
+      <ion-card-title>Predicción</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Tipo de gato: {{ prediction }}
+    </ion-card-content>
+  </ion-card>
+
   <!-- Contenido existente -->
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
